@@ -2,7 +2,6 @@ import streamlit as st
 from PIL import Image
 from transformers import pipeline
 from langchain_openai import ChatOpenAI
-import pdb
 import wave
 import numpy as np
 
@@ -12,7 +11,7 @@ from langchain_core.output_parsers import StrOutputParser
 openai_key = st.sidebar.text_input("Enter your OpenAI Key", type="password")
 # Use a pipeline as a high-level helper
 
-pipe = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
+pipe = pipeline("image-to-text", model="Salesforce/blip-image-captioning-base")
 pipe2 = pipeline("text-to-speech", model="facebook/mms-tts-eng")
 output_parser = StrOutputParser()
 
